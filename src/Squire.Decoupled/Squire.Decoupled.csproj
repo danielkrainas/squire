@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C22523BD-C290-4F88-BB6F-09F7CF2D7B3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Squire.Decoupled</RootNamespace>
+    <AssemblyName>Squire.Decoupled</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Aspects\Advice.cs" />
+    <Compile Include="Aspects\AdviceInfo.cs" />
+    <Compile Include="Aspects\AdviceProviderCollection.cs" />
+    <Compile Include="Aspects\AdviceProviders.cs" />
+    <Compile Include="Aspects\AdviceScope.cs" />
+    <Compile Include="Aspects\AfterExecutionContext.cs" />
+    <Compile Include="Aspects\BeforeExecutionContext.cs" />
+    <Compile Include="Aspects\GlobalAdvice.cs" />
+    <Compile Include="Aspects\GlobalAdviceCollection.cs" />
+    <Compile Include="Aspects\IAdvice.cs" />
+    <Compile Include="Aspects\IAdviceProvider.cs" />
+    <Compile Include="Aspects\IExecutionAdvice.cs" />
+    <Compile Include="Aspects\JoinPointDescriptor.cs" />
+    <Compile Include="Aspects\JoinPointInvoker.cs" />
+    <Compile Include="Aspects\ParameterDescriptor.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\CommandDispatcher.cs" />
+    <Compile Include="Commands\DispatcherFailedEventArgs.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandDispatcher.cs" />
+    <Compile Include="Commands\ICommandStorage.cs" />
+    <Compile Include="Commands\IHandleCommand.cs" />
+    <Compile Include="Commands\IocCommandDispatcher.cs" />
+    <Compile Include="Commands\IocScopeEventArgs.cs" />
+    <Compile Include="Commands\MemoryCommandStorage.cs" />
+    <Compile Include="Commands\PipelineDispatcher.cs" />
+    <Compile Include="Commands\PipelineDispatcherBuilder.cs" />
+    <Compile Include="Commands\Pipeline\AsyncCommandHandler.cs" />
+    <Compile Include="Commands\Pipeline\IocCommandHandler.cs" />
+    <Compile Include="Commands\Pipeline\Messages\CommandAborted.cs" />
+    <Compile Include="Commands\Pipeline\Messages\CommandCompleted.cs" />
+    <Compile Include="Commands\Pipeline\Messages\CommandFailed.cs" />
+    <Compile Include="Commands\Pipeline\Messages\CommandStored.cs" />
+    <Compile Include="Commands\Pipeline\Messages\DispatchCommand.cs" />
+    <Compile Include="Commands\Pipeline\Messages\PipelineFailure.cs" />
+    <Compile Include="Commands\Pipeline\RetryingCommandHandler.cs" />
+    <Compile Include="Commands\Pipeline\StorageCommandHandler.cs" />
+    <Compile Include="DomainEvents\DispatcherFailedEventArgs.cs" />
+    <Compile Include="DomainEvents\DomainEvent.cs" />
+    <Compile Include="DomainEvents\DomainEventBase.cs" />
+    <Compile Include="DomainEvents\EventPipelineBuilder.cs" />
+    <Compile Include="DomainEvents\EventPipelineDispatcher.cs" />
+    <Compile Include="DomainEvents\IDomainEvent.cs" />
+    <Compile Include="DomainEvents\IDomainEventDispatcher.cs" />
+    <Compile Include="DomainEvents\IDomainEventStorage.cs" />
+    <Compile Include="DomainEvents\IocDomainEventDispatcher.cs" />
+    <Compile Include="DomainEvents\ISubscribeOn.cs" />
+    <Compile Include="DomainEvents\IThreadBatchIdMapper.cs" />
+    <Compile Include="DomainEvents\IUnitOfWorkAdapter.cs" />
+    <Compile Include="DomainEvents\IUnitOfWorkObserver.cs" />
+    <Compile Include="DomainEvents\MemoryEventStorage.cs" />
+    <Compile Include="DomainEvents\Pipeline\AsyncDomainEventHandler.cs" />
+    <Compile Include="DomainEvents\Pipeline\IocDomainEventHandler.cs" />
+    <Compile Include="DomainEvents\Pipeline\Messages\DispatchEvent.cs" />
+    <Compile Include="DomainEvents\Pipeline\Messages\EventCompleted.cs" />
+    <Compile Include="DomainEvents\Pipeline\Messages\EventFailed.cs" />
+    <Compile Include="DomainEvents\Pipeline\Messages\TriggerWorker.cs" />
+    <Compile Include="DomainEvents\Pipeline\TransactionalDomainEventHandler.cs" />
+    <Compile Include="DomainEvents\ThreadBatchIdMapper.cs" />
+    <Compile Include="Pipeline\DevNullUpstreamHandler.cs" />
+    <Compile Include="Pipeline\DownstreamContext.cs" />
+    <Compile Include="Pipeline\IDownstreamContext.cs" />
+    <Compile Include="Pipeline\IDownstreamHandler.cs" />
+    <Compile Include="Pipeline\IDownstreamMessage.cs" />
+    <Compile Include="Pipeline\IPipeline.cs" />
+    <Compile Include="Pipeline\IUpstreamContext.cs" />
+    <Compile Include="Pipeline\IUpstreamHandler.cs" />
+    <Compile Include="Pipeline\IUpstreamMessage.cs" />
+    <Compile Include="Pipeline\Messages\Shutdown.cs" />
+    <Compile Include="Pipeline\Messages\StartHandlers.cs" />
+    <Compile Include="Pipeline\Pipeline.cs" />
+    <Compile Include="Pipeline\PipelineBuilder.cs" />
+    <Compile Include="Pipeline\UpstreamContext.cs" />
+    <Compile Include="Practices\IocFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\IDispatchQuery.cs" />
+    <Compile Include="Queries\IExecuteQuery.cs" />
+    <Compile Include="Queries\IocQueryDispatcher.cs" />
+    <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Queries\IQueryResult.cs" />
+    <Compile Include="Queries\QueryableExtensions.cs" />
+    <Compile Include="Queries\QueryResult.cs" />
+    <Compile Include="Queries\QueryWithConditions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="squire.unhinged.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Squire.Essentials\Squire.Essentials.csproj">
+      <Project>{2d67af2d-9e53-4bc4-8465-79a029d21881}</Project>
+      <Name>Squire.Essentials</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

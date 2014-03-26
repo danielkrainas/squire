@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D1862CDB-8E08-4BAB-B656-2BEF22858062}"
+	ProjectSection(SolutionItems) = preProject
+		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
+		Gruntfile.js = Gruntfile.js
+		MIT-LICENSE.txt = MIT-LICENSE.txt
+		package.json = package.json
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9B10419E-12B6-438A-AD09-9CB4CF098AB0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{522211C6-DA54-4975-9216-6A5831290654}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Decoupled.Tests", "tests\Squire.Decoupled.Tests\Squire.Decoupled.Tests.csproj", "{6CC79CEE-8347-4C8D-890F-21E283DA9A61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Essentials.Tests", "tests\Squire.Essentials.Tests\Squire.Essentials.Tests.csproj", "{E23CD078-D2FD-4F35-8A90-3911DA7FDEBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Security.Tests", "tests\Squire.Security.Tests\Squire.Security.Tests.csproj", "{EFCC7D20-6DCA-43F9-A2CE-CD7366791E4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Decoupled", "src\Squire.Decoupled\Squire.Decoupled.csproj", "{C22523BD-C290-4F88-BB6F-09F7CF2D7B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Essentials", "src\Squire.Essentials\Squire.Essentials.csproj", "{2D67AF2D-9E53-4BC4-8465-79A029D21881}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Security", "src\Squire.Security\Squire.Security.csproj", "{F7248316-A803-448F-B538-331953EC1CE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CC79CEE-8347-4C8D-890F-21E283DA9A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC79CEE-8347-4C8D-890F-21E283DA9A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC79CEE-8347-4C8D-890F-21E283DA9A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC79CEE-8347-4C8D-890F-21E283DA9A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E23CD078-D2FD-4F35-8A90-3911DA7FDEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23CD078-D2FD-4F35-8A90-3911DA7FDEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23CD078-D2FD-4F35-8A90-3911DA7FDEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23CD078-D2FD-4F35-8A90-3911DA7FDEBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFCC7D20-6DCA-43F9-A2CE-CD7366791E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFCC7D20-6DCA-43F9-A2CE-CD7366791E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFCC7D20-6DCA-43F9-A2CE-CD7366791E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFCC7D20-6DCA-43F9-A2CE-CD7366791E4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C22523BD-C290-4F88-BB6F-09F7CF2D7B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C22523BD-C290-4F88-BB6F-09F7CF2D7B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C22523BD-C290-4F88-BB6F-09F7CF2D7B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C22523BD-C290-4F88-BB6F-09F7CF2D7B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D67AF2D-9E53-4BC4-8465-79A029D21881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D67AF2D-9E53-4BC4-8465-79A029D21881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D67AF2D-9E53-4BC4-8465-79A029D21881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D67AF2D-9E53-4BC4-8465-79A029D21881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7248316-A803-448F-B538-331953EC1CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7248316-A803-448F-B538-331953EC1CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7248316-A803-448F-B538-331953EC1CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7248316-A803-448F-B538-331953EC1CE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CC79CEE-8347-4C8D-890F-21E283DA9A61} = {9B10419E-12B6-438A-AD09-9CB4CF098AB0}
+		{E23CD078-D2FD-4F35-8A90-3911DA7FDEBE} = {9B10419E-12B6-438A-AD09-9CB4CF098AB0}
+		{EFCC7D20-6DCA-43F9-A2CE-CD7366791E4C} = {9B10419E-12B6-438A-AD09-9CB4CF098AB0}
+	EndGlobalSection
+EndGlobal

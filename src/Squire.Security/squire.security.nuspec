@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>squire.security</id>
+        <version>$version$</version>
+        <title>Squire Security</title>
+        <authors>Daniel Krainas</authors>
+        <owners />
+        <language>en-US</language>
+        <projectUrl>https://github.com/danielkrainas/squire</projectUrl>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>squire security authentication ability</tags>
+        <description>Squire framework security API.</description>
+        <dependencies>
+          <dependency id="squire.essentials" version="$version$" />
+          <dependency id="squire.decoupled" version="$version$" />
+        </dependencies>
+    </metadata>
+    <files>
+    </files>
+</package>
