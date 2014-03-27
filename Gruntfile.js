@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                 dest: 'release',
 
                 options: {
-                    version: "0.1.0"
+                    version: grunt.file.readJSON('package.json').version
                 }
             }
         },
