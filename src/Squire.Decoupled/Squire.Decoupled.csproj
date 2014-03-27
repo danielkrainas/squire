@@ -133,7 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="squire.unhinged.nuspec" />
+    <None Include="squire.decoupled.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Squire.Essentials\Squire.Essentials.csproj">
