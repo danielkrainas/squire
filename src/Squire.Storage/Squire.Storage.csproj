@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DF25B46-9C56-4B93-8698-085ED5D3DE31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Squire.Storage</RootNamespace>
+    <AssemblyName>Squire.Storage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlobAccessType.cs" />
+    <Compile Include="BlobContainerAccessType.cs" />
+    <Compile Include="BlobContainerPermissions.cs" />
+    <Compile Include="BlobExtensions.cs" />
+    <Compile Include="BlobItemType.cs" />
+    <Compile Include="BlobPermissions.cs" />
+    <Compile Include="Development\IMemoryBlobContainerSource.cs" />
+    <Compile Include="Development\IMemoryBlobSource.cs" />
+    <Compile Include="Development\MemoryBlob.cs" />
+    <Compile Include="Development\MemoryBlobContainer.cs" />
+    <Compile Include="Development\MemoryBlobResolver.cs" />
+    <Compile Include="FileSystem\FileSystemBlob.cs" />
+    <Compile Include="FileSystem\FileSystemBlobContainer.cs" />
+    <Compile Include="FileSystem\FileSystemBlobResolver.cs" />
+    <Compile Include="IBlob.cs" />
+    <Compile Include="IBlobContainer.cs" />
+    <Compile Include="IBlobItem.cs" />
+    <Compile Include="IBlobResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StorageException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="squire.storage.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Squire.Essentials\Squire.Essentials.csproj">
+      <Project>{2d67af2d-9e53-4bc4-8465-79a029d21881}</Project>
+      <Name>Squire.Essentials</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

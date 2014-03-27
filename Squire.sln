@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Essentials", "src\Sq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Security", "src\Squire.Security\Squire.Security.csproj", "{F7248316-A803-448F-B538-331953EC1CE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Storage", "src\Squire.Storage\Squire.Storage.csproj", "{3DF25B46-9C56-4B93-8698-085ED5D3DE31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire.Storage.Tests", "tests\Squire.Storage.Tests\Squire.Storage.Tests.csproj", "{51535CCC-A1E6-4D6B-A847-C95ADF1EE7CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,14 @@ Global
 		{F7248316-A803-448F-B538-331953EC1CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7248316-A803-448F-B538-331953EC1CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7248316-A803-448F-B538-331953EC1CE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DF25B46-9C56-4B93-8698-085ED5D3DE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF25B46-9C56-4B93-8698-085ED5D3DE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF25B46-9C56-4B93-8698-085ED5D3DE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF25B46-9C56-4B93-8698-085ED5D3DE31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51535CCC-A1E6-4D6B-A847-C95ADF1EE7CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51535CCC-A1E6-4D6B-A847-C95ADF1EE7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51535CCC-A1E6-4D6B-A847-C95ADF1EE7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51535CCC-A1E6-4D6B-A847-C95ADF1EE7CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +81,6 @@ Global
 		{6CC79CEE-8347-4C8D-890F-21E283DA9A61} = {9B10419E-12B6-438A-AD09-9CB4CF098AB0}
 		{E23CD078-D2FD-4F35-8A90-3911DA7FDEBE} = {9B10419E-12B6-438A-AD09-9CB4CF098AB0}
 		{EFCC7D20-6DCA-43F9-A2CE-CD7366791E4C} = {9B10419E-12B6-438A-AD09-9CB4CF098AB0}
+		{51535CCC-A1E6-4D6B-A847-C95ADF1EE7CE} = {9B10419E-12B6-438A-AD09-9CB4CF098AB0}
 	EndGlobalSection
 EndGlobal
