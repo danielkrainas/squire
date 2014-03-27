@@ -1,6 +1,6 @@
 ﻿namespace Squire.Sentinel.Commands
 {
-    using Squire.Unhinged.Commands;
+    using Squire.Decoupled.Commands;
     using System;
     using System.Collections.Generic;
     using System.Linq;

@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.Commands
+﻿namespace Squire.Decoupled.Commands
 {
     using System;
     using System.Collections.Generic;

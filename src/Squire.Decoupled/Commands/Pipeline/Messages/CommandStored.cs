@@ -1,6 +1,6 @@
-﻿namespace Squire.Unhinged.Commands.Pipeline.Messages
+﻿namespace Squire.Decoupled.Commands.Pipeline.Messages
 {
-    using Squire.Unhinged.Pipeline;
+    using Squire.Decoupled.Pipeline;
     using System;
     using System.Collections.Generic;
     using System.Linq;

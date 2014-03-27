@@ -1,6 +1,6 @@
 ﻿namespace Squire.Sentinel.Queries
 {
-    using Squire.Unhinged.Queries;
+    using Squire.Decoupled.Queries;
     using Squire.Validation;
 
     public class GetPlayerByName : IQuery<IPlayer>

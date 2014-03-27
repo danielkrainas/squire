@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.Practices
+﻿namespace Squire.Decoupled.Practices
 {
     using Squire.Practices;
     using Squire.Validation;

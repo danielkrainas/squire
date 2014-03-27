@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.Queries
+﻿namespace Squire.Decoupled.Queries
 {
     using Squire.Validation;
     using System;

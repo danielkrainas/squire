@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.Commands
+﻿namespace Squire.Decoupled.Commands
 {
     using Microsoft.Practices.ServiceLocation;
     using System;

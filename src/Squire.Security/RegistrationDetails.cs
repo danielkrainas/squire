@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
     using Squire.Validation;
-    using Squire.Unhinged.Commands;
+    using Squire.Decoupled.Commands;
     using System.Security.Cryptography;
 
     public class RegistrationDetails

@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
     using Squire.Validation;
-    using Squire.Unhinged.DomainEvents;
+    using Squire.Decoupled.DomainEvents;
     using Squire.Sentinel.Authentication;
     using System.Security.Principal;
     using Squire.Sentinel.Abilities;

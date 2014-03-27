@@ -1,9 +1,9 @@
-﻿namespace Squire.Unhinged.Commands.Pipeline
+﻿namespace Squire.Decoupled.Commands.Pipeline
 {
     using Squire.Validation;
-    using Squire.Unhinged.Commands.Pipeline.Messages;
-    using Squire.Unhinged.Pipeline;
-    using Squire.Unhinged.Pipeline.Messages;
+    using Squire.Decoupled.Commands.Pipeline.Messages;
+    using Squire.Decoupled.Pipeline;
+    using Squire.Decoupled.Pipeline.Messages;
     using System;
     using System.Collections.Generic;
     using System.Linq;

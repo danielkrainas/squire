@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.DomainEvents
+﻿namespace Squire.Decoupled.DomainEvents
 {
     using Microsoft.Practices.ServiceLocation;
     using Squire.Validation;

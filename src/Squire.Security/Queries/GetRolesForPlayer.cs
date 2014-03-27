@@ -1,6 +1,6 @@
 ﻿namespace Squire.Sentinel.Queries
 {
-    using Squire.Unhinged.Queries;
+    using Squire.Decoupled.Queries;
     using System;
     using System.Collections.Generic;
     using System.Linq;

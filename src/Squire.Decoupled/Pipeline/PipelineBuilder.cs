@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.Pipeline
+﻿namespace Squire.Decoupled.Pipeline
 {
     using Squire.Validation;
     using System;

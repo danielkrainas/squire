@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.Pipeline.Messages
+﻿namespace Squire.Decoupled.Pipeline.Messages
 {
     using System;
     using System.Collections.Generic;

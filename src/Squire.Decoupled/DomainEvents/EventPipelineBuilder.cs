@@ -1,8 +1,8 @@
-﻿namespace Squire.Unhinged.DomainEvents
+﻿namespace Squire.Decoupled.DomainEvents
 {
     using Squire.Validation;
-    using Squire.Unhinged.DomainEvents.Pipeline;
-    using Squire.Unhinged.Pipeline;
+    using Squire.Decoupled.DomainEvents.Pipeline;
+    using Squire.Decoupled.Pipeline;
     using System;
     using System.Collections.Generic;
     using System.Linq;

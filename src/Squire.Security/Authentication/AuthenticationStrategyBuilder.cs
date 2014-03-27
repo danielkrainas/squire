@@ -1,6 +1,6 @@
 ﻿namespace Squire.Sentinel.Authentication
 {
-    using Squire.Unhinged.Pipeline;
+    using Squire.Decoupled.Pipeline;
     using System;
     using System.Collections.Generic;
     using System.Linq;

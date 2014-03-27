@@ -1,9 +1,9 @@
-﻿namespace Squire.Unhinged.Commands
+﻿namespace Squire.Decoupled.Commands
 {
     using Squire.Validation;
-    using Squire.Unhinged.Commands.Pipeline;
-    using Squire.Unhinged.DomainEvents.Pipeline;
-    using Squire.Unhinged.Pipeline;
+    using Squire.Decoupled.Commands.Pipeline;
+    using Squire.Decoupled.DomainEvents.Pipeline;
+    using Squire.Decoupled.Pipeline;
     using Microsoft.Practices.ServiceLocation;
     using System;
     using System.Collections.Generic;

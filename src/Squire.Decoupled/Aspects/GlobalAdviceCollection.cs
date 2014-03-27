@@ -1,4 +1,4 @@
-﻿namespace Squire.Unhinged.Aspects
+﻿namespace Squire.Decoupled.Aspects
 {
     using System;
     using System.Collections;

@@ -1,6 +1,6 @@
 ﻿namespace Squire.Sentinel.DomainEvents
 {
-    using Squire.Unhinged.DomainEvents;
+    using Squire.Decoupled.DomainEvents;
     using System;
     using System.Collections.Generic;
     using System.Linq;
