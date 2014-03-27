@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="BlobAccessType.cs" />
     <Compile Include="BlobContainerAccessType.cs" />
     <Compile Include="BlobContainerPermissions.cs" />
@@ -64,6 +67,10 @@
     <None Include="squire.storage.nuspec" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Squire.Decoupled\Squire.Decoupled.csproj">
+      <Project>{c22523bd-c290-4f88-bb6f-09f7cf2d7b3f}</Project>
+      <Name>Squire.Decoupled</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Squire.Essentials\Squire.Essentials.csproj">
       <Project>{2d67af2d-9e53-4bc4-8465-79a029d21881}</Project>
       <Name>Squire.Essentials</Name>
