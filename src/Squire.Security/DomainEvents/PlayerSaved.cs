@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel.DomainEvents
+﻿namespace Squire.Security.DomainEvents
 {
     using Squire.Decoupled.DomainEvents;
     using System;

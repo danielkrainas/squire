@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel.Commands
+﻿namespace Squire.Security.Commands
 {
     using Squire.Decoupled.Commands;
     using System;

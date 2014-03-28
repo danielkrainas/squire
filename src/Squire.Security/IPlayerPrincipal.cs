@@ -1,6 +1,6 @@
-﻿namespace Squire.Sentinel
+﻿namespace Squire.Security
 {
-    using Squire.Sentinel.Abilities;
+    using Squire.Security.Abilities;
     using System;
     using System.Collections.Generic;
     using System.Linq;

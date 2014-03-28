@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel
+﻿namespace Squire.Security
 {
     using System;
     using System.Collections.Generic;
@@ -6,9 +6,9 @@
     using System.Text;
     using Squire.Validation;
     using Squire.Decoupled.DomainEvents;
-    using Squire.Sentinel.Authentication;
+    using Squire.Security.Authentication;
     using System.Security.Principal;
-    using Squire.Sentinel.Abilities;
+    using Squire.Security.Abilities;
 
     public class PlayerPrincipal : IPlayerPrincipal
     {

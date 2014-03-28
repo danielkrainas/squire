@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel.Authentication
+﻿namespace Squire.Security.Authentication
 {
     using System;
     using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel.Abilities
+﻿namespace Squire.Security.Abilities
 {
     using Microsoft.Practices.ServiceLocation;
     using System;

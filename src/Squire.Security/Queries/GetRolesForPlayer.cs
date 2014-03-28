@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel.Queries
+﻿namespace Squire.Security.Queries
 {
     using Squire.Decoupled.Queries;
     using System;

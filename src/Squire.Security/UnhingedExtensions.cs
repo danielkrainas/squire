@@ -1,6 +1,6 @@
-﻿namespace Squire.Sentinel
+﻿namespace Squire.Security
 {
-    using Squire.Sentinel.Queries;
+    using Squire.Security.Queries;
     using Squire.Decoupled.Queries;
     using System;
     using System.Collections.Generic;

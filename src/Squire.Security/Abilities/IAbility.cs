@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel.Abilities
+﻿namespace Squire.Security.Abilities
 {
     using System;
     using System.Collections.Generic;

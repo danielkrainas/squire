@@ -1,4 +1,4 @@
-﻿namespace Squire.Sentinel.Authentication
+﻿namespace Squire.Security.Authentication
 {
     using Squire.Decoupled.Pipeline;
     using System;
