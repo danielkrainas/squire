@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Daniel Krainas")]
 [assembly: AssemblyProduct("Squire Framework")]
-[assembly: AssemblyCopyright("Copyright © Squire Team 2014")]
+[assembly: AssemblyCopyright("Copyright ï¿½ Squire Team 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: AssemblyVersion("0.1.2")]
+[assembly: AssemblyVersion("0.1.3")]
