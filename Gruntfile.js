@@ -1,6 +1,32 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
+        bump: {
+            options: {
+                files: ['package.json'],
+                updateConfigs: ['pkg'],
+                commit: true,
+                commitMessage: 'release v%VERSION%',
+                commitFiles: ['package.json', 'GlobalAssemblyInfo.cs'],
+                createTag: true,
+                tagName: 'v%VERSION%',
+                tagMessage: 'Version v%VERSION%',
+                push: false
+            }
+        },
+
+        assemblyinfo: {
+            options: {
+                files: ['GlobalAssemblyInfo.cs'],
+                info: {
+                    version: function () {
+                        return grunt.config('pkg.version');
+                    }
+                }
+            }
+        },
 
         mstest: {
             options: {
@@ -63,8 +89,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-nuget');
     grunt.loadNpmTasks('grunt-mkdir');
     grunt.loadNpmTasks('grunt-mstest');
+    grunt.loadNpmTasks('grunt-dotnet-assembly-info');
+    grunt.loadNpmTasks('grunt-bump');
 
-    grunt.registerTask('default', ['mstest', 'mkdir', 'msbuild', 'nugetpack']);
+    grunt.registerTask('default', ['mkdir', 'msbuild', 'mstest']);
     grunt.registerTask('test', ['mstest']);
     grunt.registerTask('publish', ['default', 'nugetpush']);
+    grunt.registerTask('pack', ['mkdir', 'nugetpack']);
+    grunt.registerTask('patch', ['bump-only:patch', 'assemblyinfo', 'msbuild', 'mstest', 'bump-commit']);
 };
