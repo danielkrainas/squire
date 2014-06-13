@@ -42,6 +42,8 @@ The `Squire.Validation` namespace hosts a number of fluent extensions to enable 
 
 **Note 2** all of the fluent validation extensions come with error messages preset, but accept a custom validation message via the `message` parameter.
 
+**Note 3** all exceptions thrown derive from `ArgumentException` and include a custom `ArgumentEmptyException` for applicable cases.
+
 Usage:
 
     using Squire.Validation;
@@ -50,7 +52,8 @@ Usage:
     {
         static void Main(string[] args)
         {
-            Foo(name: null, age: 0, 
+            // this call will fail due to the first validation check that fails and throws an ArgumentException
+            Foo(name: null, age: 0, key: new object(), nullableAge: null, collection: Enumerable.Empty<string>());
         }
 
         static void Foo(string name, int age, object key, int? nullableAge, IEnumerable<string> collection)
