@@ -57,12 +57,10 @@
     <Compile Include="Validation\EnumerableFluentExtensions.cs" />
     <Compile Include="Validation\FluentArgument.cs" />
     <Compile Include="Validation\FluentExtensions.cs" />
-    <Compile Include="Validation\GenericFluentExtensions.cs" />
     <Compile Include="Validation\GuidFluentExtensions.cs" />
     <Compile Include="Validation\IntFluentExtensions.cs" />
     <Compile Include="Validation\StringFluentExtensions.cs" />
     <Compile Include="Validation\ValidationAnd.cs" />
-    <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="squire.essentials.nuspec" />

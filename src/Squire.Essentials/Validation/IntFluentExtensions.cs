@@ -4,13 +4,12 @@
     {
         public static ValidationAnd<FluentArgument<int>> IsGreaterThanZero(this FluentArgument<int> arg, string message = "")
         {
-            ValidationHelper.ArgumentGreaterThan(arg.Target, arg.Name, 0, message);
-            return new ValidationAnd<FluentArgument<int>>(arg);
+            return IntFluentExtensions.IsGreaterThan(arg, 0, message);
         }
 
         public static ValidationAnd<FluentArgument<int>> IsGreaterThan(this FluentArgument<int> arg, int value, string message = "")
         {
-            ValidationHelper.ArgumentGreaterThan(arg.Target, arg.Name, value, message);
+            ComparableFluentExtensions.IsGreaterThan(arg, value, message);
             return new ValidationAnd<FluentArgument<int>>(arg);
         }
     }

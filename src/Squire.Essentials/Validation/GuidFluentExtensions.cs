@@ -6,7 +6,18 @@
     {
         public static ValidationAnd<FluentArgument<Guid>> IsNotEmpty(this FluentArgument<Guid> arg, string message = "")
         {
-            ValidationHelper.ArgumentNotEmpty(arg.Target, arg.Name, message);
+            if (arg.Target == Guid.Empty)
+            {
+                if (string.IsNullOrWhiteSpace(message))
+                {
+                    throw new ArgumentEmptyException(arg.Name);
+                }
+                else
+                {
+                    throw new ArgumentEmptyException(arg.Name, message);
+                }
+            }
+
             return new ValidationAnd<FluentArgument<Guid>>(arg);
         }
     }
