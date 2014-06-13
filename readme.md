@@ -11,6 +11,62 @@ This isn't your typical "core framework/library" I've worked hard to ensure it i
 
 ## Essential Components
 
+### Common Extensions
+
+The `Squire` namespace contains extensions for `object`, `IEnumerable<T>`, `string`, and more. 
+
+Usage:
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var collection = Enumerable.Range(1, 20);
+            var type = typeof(Program);
+            object obj = null;
+            var linkedList = new LinkedList<int>(collection);
+
+            // Check if a type implements an interface using the Implements<T> extension.
+            if(!type.Implements<IEnumerable>())
+            {
+                Console.WriteLine("does not implement interface");
+            }
+
+            // CoalesceToString is a ToString combined with a null check, for when you aren't sure if a value is null or not but want to print it.
+            Console.Write(obj.CoalesceToString(defaultValue: "undefined");
+
+            // Process an IEnumerable<T> in batches using the Batch extension method.
+            foreach(var batch in collection.Batch(itemsPerBatch: 5))
+            {
+                Console.Write("Batch: ");
+                foreach(var item in batch)
+                {
+                    Console.Write(item);
+                }
+
+                Console.WriteLine();
+            }
+
+            // LinkedList extensions include TakeAllAfter and TakeAllValuesAfter. 
+            var first = linkedList.First();
+
+            // TakeAllAfter enumerates all nodes after the specified the node.
+            var remaining = linkedList.TakeAllAfter(first);
+
+            // TakeAllValuesAfter enumerates all node values after the specified node.
+            foreach(var i in linkedList.TakeAllValuesAfter(first))
+            {
+                Console.WriteLine(i);
+            }
+
+            // DateTime extension ToJavaScriptTimeStampUtc allows you to convert a DateTime value to a JavaScript-supported UTC timestamp.
+            double timestamp = DateTime.Now.ToJavaScriptTimeStampUtc();
+
+            // Double contains an extension to convert the timestamp back to a DateTime value.
+            var date = timestamp.FromJavaScriptTimeStampUtc();
+        }
+    }
+
 ### Practices
 
 `Squire.Practices.IFactory<T>` is a generic interface for utilizing the factory pattern.
