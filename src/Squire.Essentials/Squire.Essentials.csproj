@@ -11,7 +11,7 @@
     <AssemblyName>Squire.Essentials</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-      <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,8 +53,14 @@
     <Compile Include="Utilities\CodeGenerator.cs" />
     <Compile Include="Utilities\CodeType.cs" />
     <Compile Include="Validation\ArgumentEmptyException.cs" />
+    <Compile Include="Validation\ComparableFluentExtensions.cs" />
+    <Compile Include="Validation\EnumerableFluentExtensions.cs" />
     <Compile Include="Validation\FluentArgument.cs" />
     <Compile Include="Validation\FluentExtensions.cs" />
+    <Compile Include="Validation\GenericFluentExtensions.cs" />
+    <Compile Include="Validation\GuidFluentExtensions.cs" />
+    <Compile Include="Validation\IntFluentExtensions.cs" />
+    <Compile Include="Validation\StringFluentExtensions.cs" />
     <Compile Include="Validation\ValidationAnd.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
