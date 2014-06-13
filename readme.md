@@ -17,9 +17,11 @@ The essential components are located within the `Squire.Essentials` nuget packag
 
 The `Squire` namespace contains extensions for `object`, `IEnumerable<T>`, `string`, and more. 
 
-Usage:
+Example:
 
 ```csharp
+using Squire;
+
 class Program
 {
     static void Main(string[] args)
@@ -75,9 +77,11 @@ class Program
 
 `Squire.Practices.IFactory<T>` is a generic interface for utilizing the factory pattern.
 
-Usage:
+Example:
 
 ```csharp
+using Squire.Practices;
+
 class Program
 {
     class ObjectFactory : IFactory<object>
@@ -106,7 +110,7 @@ The `Squire.Validation` namespace hosts a number of fluent extensions to enable 
 
 **Note 3** all exceptions thrown derive from `ArgumentException` and include a custom `ArgumentEmptyException` for applicable cases.
 
-Usage:
+Example:
 
 ```csharp
 using Squire.Validation;
