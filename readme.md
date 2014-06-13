@@ -19,6 +19,7 @@ The `Squire` namespace contains extensions for `object`, `IEnumerable<T>`, `stri
 
 Usage:
 
+```csharp
     class Program
     {
         static void Main(string[] args)
@@ -68,6 +69,7 @@ Usage:
             var date = timestamp.FromJavaScriptTimeStampUtc();
         }
     }
+```
 
 ### Practices
 
