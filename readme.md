@@ -9,6 +9,32 @@ This isn't your typical "core framework/library" I've worked hard to ensure it i
 
 # Getting Started
 
+## Essential Components
+
+### Practices
+
+`Squire.Practices.IFactory<T>` is a generic interface for utilizing the factory pattern.
+
+Usage:
+
+    class Program
+    {
+        class ObjectFactory : IFactory<object>
+        {
+            public object Create()
+            {
+                return new object();
+            }
+        }
+        
+        static void Main(string[] args)
+        {
+            IFactory<object> factory = new ObjectFactory();
+            var createdObject = factory.Create();
+        }
+    }
+    
+
 # Bugs and Feedback
 
 If you see a bug or have a suggestion, feel free to create an issue [here][3].
