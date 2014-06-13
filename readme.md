@@ -34,6 +34,49 @@ Usage:
         }
     }
     
+### Validation
+
+The `Squire.Validation` namespace hosts a number of fluent extensions to enable simple parameter validation. Calling the `VerifyParam` extension method will return a validation object with the fluent calls available. 
+
+**Note 1** chaining is possible by referencing the `And` property after each validation call.
+
+**Note 2** all of the fluent validation extensions come with error messages preset, but accept a custom validation message via the `message` parameter.
+
+Usage:
+
+    using Squire.Validation;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Foo(name: null, age: 0, 
+        }
+
+        static void Foo(string name, int age, object key, int? nullableAge, IEnumerable<string> collection)
+        {
+            // All objects can use IsNotNull and IsSubClassOf
+            key.VerifyParam("key").IsNotNull(message: "This cannot be null!")
+                .And.IsSubClassOf(typeof(object));
+
+            // This also works for nullable types
+            nullableAge.VerifyParam("nullableAge").IsNotNull();
+
+            // Strings have access to IsNotWhiteSpace IsNotBlank IsNotNull and IsNotEmpty when validating.
+            name.VerifyParam("name").IsNotNull()
+                .And.IsNotEmpty()      // IsNotEmpty also checks for null
+                .And.IsNotWhiteSpace() // IsNotWhiteSpace also checks for empty and null
+                .And.IsNotBlank();     // IsNotBlank also checks for null and empty
+
+            // Integers have access to IsGreaterThan IsInRange and IsGreaterThanZero
+            age.VerifyParam("age").IsGreaterThanZero()
+                .And.IsGreaterThan(18)
+                .And.IsInRange(0, 10, inclusive: false);
+
+            // Enumerable<T> can use IsNotEmpty() to verify the collection has elements.
+            collection.VerifyParam("collection").IsNotEmpty();
+        }
+    }
 
 # Bugs and Feedback
 
