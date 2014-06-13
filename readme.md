@@ -11,6 +11,8 @@ This isn't your typical "core framework/library" I've worked hard to ensure it i
 
 ## Essential Components
 
+The essential components are located within the `Squire.Essentials` nuget package.
+
 ### Common Extensions
 
 The `Squire` namespace contains extensions for `object`, `IEnumerable<T>`, `string`, and more. 
