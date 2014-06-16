@@ -22,7 +22,7 @@
 
         public IocQueryDispatcher(IServiceLocator container)
         {
-            ValidationHelper.ArgumentNotNull(container, "container");
+            container.VerifyParam("container").IsNotNull();
             this.container = container;
         }
 

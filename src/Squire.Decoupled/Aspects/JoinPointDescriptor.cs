@@ -16,7 +16,7 @@
 
         public JoinPointDescriptor(MethodInfo method)
         {
-            ValidationHelper.ArgumentNotNull(method, "method");
+            method.VerifyParam("method").IsNotNull();
             this.method = method;
             this.parameters = this.method.GetParameters().Select(p => new ParameterDescriptor(this, p)).ToArray();
         }

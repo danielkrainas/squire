@@ -13,14 +13,14 @@
 
         public static void Assign(IDomainEventDispatcher dispatcher)
         {
-            ValidationHelper.ArgumentNotNull(dispatcher, "dispatcher");
+            dispatcher.VerifyParam("dispatcher").IsNotNull();
             DomainEvent._dispatcher = dispatcher;
         }
 
         public static void Publish<TEvent>(TEvent domainEvent)
             where TEvent : class, IDomainEvent
         {
-            ValidationHelper.ArgumentNotNull(domainEvent, "domainEvent");
+            domainEvent.VerifyParam("domainEvent").IsNotNull();
             if (DomainEvent._dispatcher == null)
             {
                 throw new InvalidOperationException("the default dispatcher has not been specified");

@@ -13,7 +13,7 @@
 
         public Advice(IAdvice instance, AdviceScope scope, int? order)
         {
-            ValidationHelper.ArgumentNotNull(instance, "instance");
+            instance.VerifyParam("instance").IsNotNull();
             this.Order = order ?? Advice.DefaultOrder;
             this.Instance = instance;
             this.Scope = scope;

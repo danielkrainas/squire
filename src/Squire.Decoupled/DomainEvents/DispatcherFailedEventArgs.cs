@@ -11,8 +11,8 @@
     {
         public DispatcherFailedEventArgs(Exception exception, IDomainEvent domainEvent)
         {
-            ValidationHelper.ArgumentNotNull(exception, "exception");
-            ValidationHelper.ArgumentNotNull(domainEvent, "domainEvent");
+            exception.VerifyParam("exception").IsNotNull();
+            domainEvent.VerifyParam("domainEvent").IsNotNull();
             this.Exception = exception;
             this.DomainEvent = domainEvent;
         }

@@ -21,7 +21,7 @@
 
         public void RegisterUpstream(IUpstreamHandler handler)
         {
-            ValidationHelper.ArgumentNotNull(handler, "handler");
+            handler.VerifyParam("handler").IsNotNull();
             var context = new UpstreamContext(handler);
             if (this.upstreamHandlers.Count > 0)
             {
@@ -33,7 +33,7 @@
 
         public void RegisterDownstream(IDownstreamHandler handler)
         {
-            ValidationHelper.ArgumentNotNull(handler, "handler");
+            handler.VerifyParam("handler").IsNotNull();
             var context = new DownstreamContext(handler);
             if (this.downstreamHandlers.Count > 0)
             {

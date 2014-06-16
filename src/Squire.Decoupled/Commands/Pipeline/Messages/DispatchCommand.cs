@@ -18,7 +18,7 @@
 
         public DispatchCommand(ICommand command)
         {
-            ValidationHelper.ArgumentNotNull(command, "command");
+            command.VerifyParam("command").IsNotNull();
             this.Command = command;
             this.Attempts = 0;
         }

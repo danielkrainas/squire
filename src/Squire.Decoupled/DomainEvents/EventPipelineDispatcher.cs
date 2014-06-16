@@ -16,7 +16,7 @@
 
         public EventPipelineDispatcher(IPipeline pipeline)
         {
-            ValidationHelper.ArgumentNotNull(pipeline, "pipeline");
+            pipeline.VerifyParam("pipeline").IsNotNull();
             this.pipeline = pipeline;
         }
 

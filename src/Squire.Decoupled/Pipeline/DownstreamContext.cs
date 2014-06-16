@@ -36,7 +36,7 @@
 
         public void Invoke(IDownstreamMessage message)
         {
-            ValidationHelper.ArgumentNotNull(message, "message");
+            message.VerifyParam("message").IsNotNull();
             this.handler.HandleDownstream(this, message);
             this.InvokeUpstream();
             this.InvokeDownstream();
@@ -44,25 +44,25 @@
 
         public void SendUpstream(IUpstreamMessage message)
         {
-            ValidationHelper.ArgumentNotNull(message, "message");
+            message.VerifyParam("message").IsNotNull();
             this.upMessages.Enqueue(message);
         }
 
         public void SendDownstream(IDownstreamMessage message)
         {
-            ValidationHelper.ArgumentNotNull(message, "message");
+            message.VerifyParam("message").IsNotNull();
             this.downMessages.Enqueue(message);
         }
 
         public void SetNext(DownstreamContext next)
         {
-            ValidationHelper.ArgumentNotNull(next, "next");
+            next.VerifyParam("next").IsNotNull();
             this.next = next;
         }
 
         public void SetUpstream(UpstreamContext up)
         {
-            ValidationHelper.ArgumentNotNull(up, "up");
+            up.VerifyParam("up").IsNotNull();
             this.up = up;
         }
 

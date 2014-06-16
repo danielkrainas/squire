@@ -12,7 +12,7 @@
     {
         public EventCompleted(DispatchEvent message)
         {
-            ValidationHelper.ArgumentNotNull(message, "message");
+            message.VerifyParam("message").IsNotNull();
             this.Message = message;
         }
 

@@ -50,7 +50,7 @@
 
         public void Add(DispatchCommand command)
         {
-            ValidationHelper.ArgumentNotNull(command, "command");
+            command.VerifyParam("command").IsNotNull();
             lock (this.mutex)
             {
                 this.queue.Add(new StorageEntry(command));

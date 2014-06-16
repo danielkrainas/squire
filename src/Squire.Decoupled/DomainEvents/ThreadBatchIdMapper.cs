@@ -60,7 +60,7 @@
 
         public Guid Create(object unitOfWork)
         {
-            ValidationHelper.ArgumentNotNull(unitOfWork, "unitOfWork");
+            unitOfWork.VerifyParam("unitOfWork").IsNotNull();
             ICollection<UnitOfWorkGuidMapping> mappings;
             if (!this.threadMappings.TryGetValue(Thread.CurrentThread.ManagedThreadId, out mappings))
             {
@@ -75,7 +75,7 @@
 
         public Guid Release(object unitOfWork)
         {
-            ValidationHelper.ArgumentNotNull(unitOfWork, "unitOfWork");
+            unitOfWork.VerifyParam("unitOfWork").IsNotNull();
             ICollection<UnitOfWorkGuidMapping> mappings;
             if (!this.threadMappings.TryGetValue(Thread.CurrentThread.ManagedThreadId, out mappings))
             {

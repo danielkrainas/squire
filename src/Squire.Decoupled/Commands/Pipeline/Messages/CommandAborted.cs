@@ -12,8 +12,8 @@
     {
         public CommandAborted(DispatchCommand message, Exception exception)
         {
-            ValidationHelper.ArgumentNotNull(message, "message");
-            ValidationHelper.ArgumentNotNull(exception, "exception");
+            message.VerifyParam("message").IsNotNull();
+            exception.VerifyParam("exception").IsNotNull();
             this.Message = message;
             this.Exception = exception;
         }

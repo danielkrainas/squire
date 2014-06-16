@@ -42,7 +42,7 @@
 
         public IEnumerable<Advice> GetAdvice(JoinPointDescriptor joinPoint)
         {
-            ValidationHelper.ArgumentNotNull(joinPoint, "joinPoint");
+            joinPoint.VerifyParam("joinPoint").IsNotNull();
             var providers = this.Items;
             var advices = new List<Advice>();
             foreach (var provider in providers)

@@ -16,7 +16,7 @@
 
         public StorageCommandHandler(ICommandStorage storage)
         {
-            ValidationHelper.ArgumentNotNull(storage, "storage");
+            storage.VerifyParam("storage").IsNotNull();
             this.storage = storage;
         }
 

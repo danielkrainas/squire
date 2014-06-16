@@ -17,8 +17,8 @@
 
         public TransactionalDomainEventHandler(IUnitOfWorkAdapter adapter, IDomainEventStorage storage)
         {
-            ValidationHelper.ArgumentNotNull(adapter, "adapter");
-            ValidationHelper.ArgumentNotNull(storage, "storage");
+            adapter.VerifyParam("adapter").IsNotNull();
+            storage.VerifyParam("storage").IsNotNull();
             this.storage = storage;
             adapter.Register(this);
             this.threadBatchIdMapper = new ThreadBatchIdMapper();
@@ -26,9 +26,9 @@
 
         public TransactionalDomainEventHandler(IUnitOfWorkAdapter adapter, IDomainEventStorage storage, IThreadBatchIdMapper threadBatchIdMapper)
         {
-            ValidationHelper.ArgumentNotNull(adapter, "adapter");
-            ValidationHelper.ArgumentNotNull(storage, "storage");
-            ValidationHelper.ArgumentNotNull(threadBatchIdMapper, "threadBatchIdMapper");
+            adapter.VerifyParam("adapter").IsNotNull();
+            storage.VerifyParam("storage").IsNotNull();
+            threadBatchIdMapper.VerifyParam("threadBatchIdMapper").IsNotNull();
             this.storage = storage;
             adapter.Register(this);
             this.threadBatchIdMapper = threadBatchIdMapper;

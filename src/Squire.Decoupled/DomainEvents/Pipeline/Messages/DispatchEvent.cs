@@ -12,7 +12,7 @@
     {
         public DispatchEvent(IDomainEvent domainEvent)
         {
-            ValidationHelper.ArgumentNotNull(domainEvent, "domainEvent");
+            domainEvent.VerifyParam("domainEvent").IsNotNull();
             this.DomainEvent = domainEvent;
         }
 

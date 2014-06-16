@@ -16,14 +16,14 @@
 
         public PipelineDispatcher(IPipeline pipeline)
         {
-            ValidationHelper.ArgumentNotNull(pipeline, "pipeline");
+            pipeline.VerifyParam("pipeline").IsNotNull();
             this.pipeline = pipeline;
         }
 
         public void Dispatch<TCommand>(TCommand command)
             where TCommand : class, ICommand
         {
-            ValidationHelper.ArgumentNotNull(command, "command");
+            command.VerifyParam("command").IsNotNull();
             var message = new DispatchCommand(command);
             this.pipeline.Send(message);
         }

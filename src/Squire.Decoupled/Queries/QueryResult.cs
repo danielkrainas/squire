@@ -12,7 +12,7 @@
     {
         public QueryResult(IEnumerable<T> items, int totalCount)
         {
-            ValidationHelper.ArgumentNotNull(items, "items");
+            items.VerifyParam("items").IsNotNull();
             this.Items = items;
             this.TotalCount = totalCount;
         }
