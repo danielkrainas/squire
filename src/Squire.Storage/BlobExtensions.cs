@@ -24,6 +24,24 @@
             return text;
         }
 
+        public static IEnumerable<string> ReadAllLines(this IBlob blob)
+        {
+            blob.VerifyParam("blob").IsNotNull();
+            var lines = new List<string>();
+            blob.PerformRead(s =>
+            {
+                using (var reader = new StreamReader(s))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        lines.Add(reader.ReadLine());
+                    }
+                }
+            });
+
+            return lines;
+        }
+
         public static byte[] ReadAllBytes(this IBlob blob)
         {
             blob.VerifyParam("blob").IsNotNull();
