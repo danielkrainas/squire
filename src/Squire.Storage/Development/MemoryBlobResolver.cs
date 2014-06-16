@@ -41,6 +41,11 @@
 
         public IBlobContainer ResolveContainer(Uri uri)
         {
+            if (!uri.IsAbsoluteUri)
+            {
+                uri = new Uri(this.GetUri(), uri.ToString());
+            }
+
             var path = uri.GetComponents(UriComponents.Path, UriFormat.SafeUnescaped);
             var pathParts = path.Split('/');
             var collection = this.GetRoot();
@@ -58,6 +63,11 @@
 
         public IBlob Resolve(Uri uri)
         {
+            if (!uri.IsAbsoluteUri)
+            {
+                uri = new Uri(this.GetUri(), uri.ToString());
+            }
+
             var path = uri.GetComponents(UriComponents.Path, UriFormat.SafeUnescaped);
             var pathParts = path.Split('/');
             var collection = this.GetRoot();
