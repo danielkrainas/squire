@@ -12,11 +12,14 @@
 
         private readonly List<MemoryBlobContainer> containers;
 
-        public MemoryBlobResolver()
+        private readonly bool autoCreateUnknown;
+
+        public MemoryBlobResolver(bool autoCreateUnknown = true)
         {
-            this.root = new MemoryBlobContainer(this, "$", true);
+            this.root = new MemoryBlobContainer(this, "$", true, autoCreateUnknown);
             this.containers = new List<MemoryBlobContainer>();
             this.containers.Add(this.root);
+            this.autoCreateUnknown = autoCreateUnknown;
         }
 
         public void AddContainer(MemoryBlobContainer container)

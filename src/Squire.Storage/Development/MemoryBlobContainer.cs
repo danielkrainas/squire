@@ -16,11 +16,14 @@
 
         private BlobContainerPermissions permissions;
 
-        public MemoryBlobContainer(IMemoryBlobContainerSource source, string name, bool exists)
+        private readonly bool autoCreateUnknown;
+
+        public MemoryBlobContainer(IMemoryBlobContainerSource source, string name, bool exists, bool autoCreateUnknown)
             : this(source)
         {
             this.exists = exists;
             this.Name = name;
+            this.autoCreateUnknown = autoCreateUnknown;
         }
 
         public MemoryBlobContainer(IMemoryBlobContainerSource source)
@@ -44,7 +47,7 @@
                 .And.IsNotWhiteSpace();
 
             var blob = this.blobs.FirstOrDefault(b => b.Name == name);
-            if (blob == null && this.exists)
+            if (this.autoCreateUnknown && blob == null && this.exists)
             {
                 return new MemoryBlob(this, name, false);
             }
@@ -69,9 +72,9 @@
         public IBlobContainer GetContainer(string containerName)
         {
             var container = this.containers.FirstOrDefault(c => c.Name == containerName);
-            if (container == null)
+            if (this.autoCreateUnknown && container == null)
             {
-                container = new MemoryBlobContainer(this, containerName, false);
+                container = new MemoryBlobContainer(this, containerName, false, this.autoCreateUnknown);
             }
 
             return container;
