@@ -28,5 +28,15 @@
         {
             return builder.ValidateThrough(new InlineValidator(validatorExpression));
         }
+
+        public static AuthenticationStrategyBuilder ProtectPasswordsBy(this AuthenticationStrategyBuilder builder, Func<string, string, string> hashExpression)
+        {
+            return builder.ProtectPasswords(new InlineHashFilter(hashExpression));
+        }
+
+        public static AuthenticationStrategyBuilder ProtectPasswordsBy(this AuthenticationStrategyBuilder builder, Expression<Func<string, string, string>> hashExpression)
+        {
+            return builder.ProtectPasswords(new InlineHashFilter(hashExpression));
+        }
     }
 }
