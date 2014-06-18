@@ -59,6 +59,7 @@
     <Compile Include="Authentication\DevAuthenticationStrategy.cs" />
     <Compile Include="Authentication\IAuthenticationStrategy.cs" />
     <Compile Include="Authentication\IHashFilter.cs" />
+    <Compile Include="Authentication\InlineValidator.cs" />
     <Compile Include="Authentication\IPlayerRegistrar.cs" />
     <Compile Include="Authentication\IPlayerResolver.cs" />
     <Compile Include="Authentication\IRoleResolver.cs" />
