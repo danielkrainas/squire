@@ -19,14 +19,14 @@
             return builder.ProtectPasswords(new MD5HashFilter());
         }
 
-        public static AuthenticationStrategyBuilder ValidateBy(this AuthenticationStrategyBuilder builder, Func<IPlayer, string, bool> validator)
+        public static AuthenticationStrategyBuilder ValidateThrough(this AuthenticationStrategyBuilder builder, Func<IPlayer, string, bool> validator)
         {
             return builder.ValidateThrough(new InlineValidator(validator));
         }
 
-        public static AuthenticationStrategyBuilder ValidateBy(this AuthenticationStrategyBuilder builder, Expression<Func<IPlayer, string, bool>> validatorExpression)
+        public static AuthenticationStrategyBuilder ValidateThrough(this AuthenticationStrategyBuilder builder, Expression<Func<IPlayer, string, bool>> validatorExpression)
         {
-            return builder.ValidateThrough(new InlineValidator(validatorExpression.Compile()));
+            return builder.ValidateThrough(new InlineValidator(validatorExpression));
         }
     }
 }
