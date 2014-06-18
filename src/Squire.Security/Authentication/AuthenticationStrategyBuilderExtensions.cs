@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using Squire.Validation;
+    using System.Linq.Expressions;
 
     public static class AuthenticationStrategyBuilderExtensions
     {
@@ -21,6 +22,11 @@
         public static AuthenticationStrategyBuilder ValidateBy(this AuthenticationStrategyBuilder builder, Func<IPlayer, string, bool> validator)
         {
             return builder.ValidateThrough(new InlineValidator(validator));
+        }
+
+        public static AuthenticationStrategyBuilder ValidateBy(this AuthenticationStrategyBuilder builder, Expression<Func<IPlayer, string, bool>> validatorExpression)
+        {
+            return builder.ValidateThrough(new InlineValidator(validatorExpression.Compile()));
         }
     }
 }
