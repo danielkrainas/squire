@@ -1,11 +1,8 @@
 ﻿namespace Squire.Security.Authentication
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Squire.Validation;
+    using System;
+    using System.Linq.Expressions;
     using System.Threading;
 
     public static class Authenticator
@@ -20,6 +17,14 @@
         public static void DevelopmentMode(IPlayer authenticatedPlayer)
         {
             Authenticator.Assign(new DevAuthenticationStrategy(authenticatedPlayer));
+        }
+
+        public static void BuildStrategy(Expression<Func<AuthenticationStrategyBuilder, AuthenticationStrategyBuilder>> buildExpression)
+        {
+            buildExpression.VerifyParam("buildExpression").IsNotNull();
+            var builder = new AuthenticationStrategyBuilder();
+            var strategy = buildExpression.Compile().Invoke(builder).Build();
+            Authenticator.Assign(strategy);
         }
 
         private static void VerifyReady()

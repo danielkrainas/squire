@@ -16,11 +16,9 @@
 
         private readonly ISessionTracker sessionManager;
 
-        private readonly IRoleResolver roleResolver;
-
         private readonly IPlayerRegistrar registrar;
 
-        public AuthenticationStrategyAdapter(IPlayerResolver playerResolver, IValidator validator, ISessionTracker sessionManager, IHashFilter hash = null, IRoleResolver roleResolver = null, IPlayerRegistrar registrar = null)
+        public AuthenticationStrategyAdapter(IPlayerResolver playerResolver, IValidator validator, ISessionTracker sessionManager, IHashFilter hash = null, IPlayerRegistrar registrar = null)
         {
             playerResolver.VerifyParam("playerResolver").IsNotNull();
             validator.VerifyParam("validator").IsNotNull();
@@ -29,7 +27,6 @@
             this.validator = validator;
             this.hash = hash;
             this.sessionManager = sessionManager;
-            this.roleResolver = roleResolver;
             this.registrar = registrar;
         }
 
@@ -86,6 +83,11 @@
         public IPlayer Register(RegistrationDetails registration)
         {
             registration.VerifyParam("registration").IsNotNull();
+            if (this.registrar == null)
+            {
+                throw new InvalidOperationException("registrar not specified for this authentication strategy");
+            }
+
             if(this.IsPasswordHashEnabled)
             {
                 registration.Password = this.hash.Calculate(registration.Name, registration.Password);

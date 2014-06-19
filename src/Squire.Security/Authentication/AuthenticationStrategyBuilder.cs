@@ -18,15 +18,12 @@
 
         private ISessionTracker tracker;
 
-        private IRoleResolver roleResolver;
-
         public AuthenticationStrategyBuilder()
         {
             this.hash = null;
             this.registrar = null;
             this.validator = null;
             this.tracker = null;
-            this.roleResolver = null;
         }
 
         public AuthenticationStrategyBuilder ProtectPasswords(IHashFilter hash)
@@ -38,12 +35,6 @@
         public AuthenticationStrategyBuilder ResolvePlayersBy(IPlayerResolver resolver)
         {
             this.playerResolver = resolver;
-            return this;
-        }
-
-        public AuthenticationStrategyBuilder ResolveRolesBy(IRoleResolver resolver)
-        {
-            this.roleResolver = resolver;
             return this;
         }
 
@@ -82,7 +73,7 @@
                 throw new InvalidOperationException("you must specify a session tracker");
             }
 
-            return new AuthenticationStrategyAdapter(this.playerResolver, this.validator, this.tracker, hash: this.hash, registrar: this.registrar, roleResolver: this.roleResolver);
+            return new AuthenticationStrategyAdapter(this.playerResolver, this.validator, this.tracker, hash: this.hash, registrar: this.registrar);
         }
     }
 }
