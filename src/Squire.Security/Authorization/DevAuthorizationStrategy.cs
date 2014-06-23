@@ -18,7 +18,9 @@
             : this(readOnly)
         {
             player.VerifyParam("player").IsNotNull();
-            roleNames.VerifyParam("roleNames").IsNotNull();
+            roleNames.VerifyParam("roleNames").IsNotNull()
+                .And.IsNotEmpty();
+
             foreach (var roleName in roleNames)
             {
                 this.AddPlayer(player, this.Select(roleName));

@@ -53,6 +53,7 @@
     <Compile Include="Utilities\CodeGenerator.cs" />
     <Compile Include="Utilities\CodeType.cs" />
     <Compile Include="Validation\ArgumentEmptyException.cs" />
+    <Compile Include="Validation\ArrayFluentExtensions.cs" />
     <Compile Include="Validation\ComparableFluentExtensions.cs" />
     <Compile Include="Validation\EnumerableFluentExtensions.cs" />
     <Compile Include="Validation\FluentArgument.cs" />
