@@ -57,6 +57,7 @@
     <Compile Include="Authentication\AuthenticationStrategyBuilderExtensions.cs" />
     <Compile Include="Authentication\Authenticator.cs" />
     <Compile Include="Authentication\DevAuthenticationStrategy.cs" />
+    <Compile Include="Authorization\DecoupledAuthorizationExtensions.cs" />
     <Compile Include="Authorization\DevAuthorizationStrategy.cs" />
     <Compile Include="Authentication\IAuthenticationStrategy.cs" />
     <Compile Include="Authentication\IHashFilter.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Authorization\Authorizer.cs" />
     <Compile Include="Authorization\IAuthorizationStrategy.cs" />
     <Compile Include="Authorization\InMemoryRoleTracker.cs" />
+    <Compile Include="Authorization\Queries\GetRolesForPlayer.cs" />
     <Compile Include="Authorization\RoleRegistrarCacheFilter.cs" />
     <Compile Include="Authorization\InMemoryRoleRegistrar.cs" />
     <Compile Include="Authorization\IRole.cs" />
