@@ -1,6 +1,6 @@
 {
   "name": "Squire",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Squire is my personal framework I use in many of my projects. It contains many advanced utilities, predefined common classes (address, contact info, etc), and extensions. It's entire point is to get me up and running faster.",
   "author": "Daniel Krainas",
   "license": "MIT",
