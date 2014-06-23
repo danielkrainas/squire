@@ -57,6 +57,7 @@
     <Compile Include="Authentication\AuthenticationStrategyBuilderExtensions.cs" />
     <Compile Include="Authentication\Authenticator.cs" />
     <Compile Include="Authentication\DevAuthenticationStrategy.cs" />
+    <Compile Include="Authorization\DevAuthorizationStrategy.cs" />
     <Compile Include="Authentication\IAuthenticationStrategy.cs" />
     <Compile Include="Authentication\IHashFilter.cs" />
     <Compile Include="Authentication\InlineHashFilter.cs" />
@@ -72,6 +73,9 @@
     <Compile Include="Authorization\AuthorizationStrategyBuilderExtensions.cs" />
     <Compile Include="Authorization\Authorizer.cs" />
     <Compile Include="Authorization\IAuthorizationStrategy.cs" />
+    <Compile Include="Authorization\InMemoryRoleTracker.cs" />
+    <Compile Include="Authorization\RoleRegistrarCacheFilter.cs" />
+    <Compile Include="Authorization\InMemoryRoleRegistrar.cs" />
     <Compile Include="Authorization\IRole.cs" />
     <Compile Include="Authorization\IRoleCacher.cs" />
     <Compile Include="Authorization\IRoleRegistrar.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Authorization\RoleEnumerationExtensions.cs" />
     <Compile Include="Authorization\RoleRegistration.cs" />
     <Compile Include="Authorization\SimpleRole.cs" />
+    <Compile Include="Authorization\SimpleRoleResolver.cs" />
     <Compile Include="Commands\RegisterPlayer.cs" />
     <Compile Include="Commands\SavePlayer.cs" />
     <Compile Include="DomainEvents\PlayerCreated.cs" />

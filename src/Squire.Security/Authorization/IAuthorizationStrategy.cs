@@ -22,5 +22,7 @@
         void AddPlayer(IPlayer player, IRole role);
 
         void RemovePlayer(IPlayer player, IRole role);
+
+        void RemovePlayer(IPlayer player);
     }
 }

@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Linq.Expressions;
     using System.Text;
+    using Squire.Validation;
 
     public static class Authorizer
     {
@@ -12,6 +14,34 @@
         public static void Assign(IAuthorizationStrategy provider)
         {
             Authorizer._provider = provider;
+        }
+
+        public static void BuildStrategy(Expression<Func<AuthorizationStrategyBuilder, AuthorizationStrategyBuilder>> buildExpression)
+        {
+            buildExpression.VerifyParam("buildExpression").IsNotNull();
+            var builder = new AuthorizationStrategyBuilder();
+            var strategy = buildExpression.Compile().Invoke(builder).Build();
+            Authorizer.Assign(strategy);
+        }
+
+        public static void DevelopmentMode(bool readOnly = false)
+        {
+            Authorizer.Assign(new DevAuthorizationStrategy(readOnly));
+        }
+
+        public static void DevelopmentMode(bool readOnly, IPlayer player, params string[] roleNames)
+        {
+            Authorizer.Assign(new DevAuthorizationStrategy(readOnly, player, roleNames));
+        }
+
+        public static void DevelopmentMode(bool readOnly, IDictionary<IPlayer, IEnumerable<string>> roleAssignments)
+        {
+            Authorizer.Assign(new DevAuthorizationStrategy(readOnly, roleAssignments));
+        }
+
+        public static void DevelopmentMode(IPlayer player, params string[] roleNames)
+        {
+            Authorizer.DevelopmentMode(false, player, roleNames);
         }
 
         private static void VerifyReady()

@@ -23,31 +23,46 @@
             this.registrar = registrar;
         }
 
-        public bool IsIn(IPlayer player, IRole role)
+        protected bool IsRegisteredSafe(IRole role)
+        {
+            return this.registrar == null || (this.registrar != null && this.registrar.IsRegistered(role));
+        }
+
+        public virtual bool IsIn(IPlayer player, IRole role)
         {
             player.VerifyParam("player").IsNotNull();
             role.VerifyParam("role").IsNotNull();
-            return this.tracker.IsFamiliar(role, player);
+            if (this.IsRegisteredSafe(role))
+            {
+                return this.tracker.IsFamiliar(role, player);
+            }
+
+            return false;
         }
 
-        public IEnumerable<IRole> AllRoles()
+        public virtual IEnumerable<IRole> AllRoles()
         {
             return this.resolver.ResolveAll();
         }
 
-        public IEnumerable<IPlayer> PlayersIn(IRole role)
+        public virtual IEnumerable<IPlayer> PlayersIn(IRole role)
         {
             role.VerifyParam("role").IsNotNull();
-            return this.tracker.GetPlayers(role);
+            if (this.IsRegisteredSafe(role))
+            {
+                return this.tracker.GetPlayers(role);
+            }
+
+            return Enumerable.Empty<IPlayer>();
         }
 
-        public IRole Select(string id)
+        public virtual IRole Select(string id)
         {
             id.VerifyParam("id").IsNotNull();
-            return this.resolver.ResolveAll().FirstOrDefault(r => r.Id.Equals(id));
+            return this.resolver.Resolve(id);
         }
 
-        public IRole Register(RoleRegistration registration)
+        public virtual IRole Register(RoleRegistration registration)
         {
             registration.VerifyParam("registration").IsNotNull();
             if (this.registrar == null)
@@ -60,7 +75,7 @@
             return role;
         }
 
-        public void Unregister(IRole role)
+        public virtual void Unregister(IRole role)
         {
             role.VerifyParam("role").IsNotNull();
             if (this.registrar == null)
@@ -68,21 +83,37 @@
                 throw new InvalidOperationException("registrar not specified for this authorization strategy");
             }
 
-            this.registrar.Unregister(role);
+            if (this.registrar.IsRegistered(role))
+            {
+                this.tracker.Forget(role);
+                this.registrar.Unregister(role);
+            }
         }
 
-        public void AddPlayer(IPlayer player, IRole role)
+        public virtual void AddPlayer(IPlayer player, IRole role)
         {
             player.VerifyParam("player").IsNotNull();
             role.VerifyParam("role").IsNotNull();
-            this.tracker.Remember(role, player);
+            if (this.IsRegisteredSafe(role))
+            {
+                this.tracker.Remember(role, player);
+            }
         }
 
-        public void RemovePlayer(IPlayer player, IRole role)
+        public virtual void RemovePlayer(IPlayer player, IRole role)
         {
             player.VerifyParam("player").IsNotNull();
             role.VerifyParam("role").IsNotNull();
-            this.tracker.Forget(role, player);
+            if (this.IsRegisteredSafe(role))
+            {
+                this.tracker.Forget(role, player);
+            }
+        }
+
+        public virtual void RemovePlayer(IPlayer player)
+        {
+            player.VerifyParam("player").IsNotNull();
+            this.tracker.Forget(player);
         }
     }
 }

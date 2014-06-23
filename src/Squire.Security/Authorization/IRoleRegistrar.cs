@@ -10,5 +10,7 @@
         void Register(IRole role);
 
         void Unregister(IRole role);
+
+        bool IsRegistered(IRole role);
     }
 }

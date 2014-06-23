@@ -23,7 +23,7 @@
             this.tracker = null;
         }
 
-        public AuthorizationStrategyBuilder ResolveWith(IRoleResolver resolver)
+        public AuthorizationStrategyBuilder Resolve(IRoleResolver resolver)
         {
             this.resolver = resolver;
             return this;
