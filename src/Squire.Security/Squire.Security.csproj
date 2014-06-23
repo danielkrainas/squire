@@ -104,10 +104,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\GetPlayerById.cs" />
     <Compile Include="Queries\GetPlayerByName.cs" />
-    <Compile Include="Queries\GetRolesForPlayer.cs" />
     <Compile Include="RegistrationDetails.cs" />
     <Compile Include="SecurityExtensions.cs" />
-    <Compile Include="UnhingedExtensions.cs" />
+    <Compile Include="DecoupledSecurityExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

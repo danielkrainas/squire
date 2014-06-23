@@ -7,7 +7,7 @@
     using System.Linq;
     using System.Text;
 
-    public static class UnhingedExtensions
+    public static class DecoupledSecurityExtensions
     {
         public static IPlayer GetPlayerById(this IDispatchQuery dispatch, string id)
         {
@@ -17,11 +17,6 @@
         public static IPlayer GetPlayerByName(this IDispatchQuery dispatch, string name)
         {
             return dispatch.Execute(new GetPlayerByName(name));
-        }
-
-        public static ICollection<string> GetRolesForPlayer(this IDispatchQuery dispatch, string playerId)
-        {
-            return dispatch.Execute(new GetRolesForPlayer(playerId));
         }
     }
 }
