@@ -49,6 +49,9 @@
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Practices\IFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup\AppSetup.cs" />
+    <Compile Include="Setup\IAppSetup.cs" />
+    <Compile Include="Setup\GenericSetupExtensions.cs" />
     <Compile Include="TypeExtensions.cs" />
     <Compile Include="Utilities\CodeGenerator.cs" />
     <Compile Include="Utilities\CodeType.cs" />
