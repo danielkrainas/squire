@@ -64,6 +64,7 @@
     <Compile Include="Aspects\ParameterDescriptor.cs" />
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\CommandDispatcher.cs" />
+    <Compile Include="Commands\CommandsSetupExtensions.cs" />
     <Compile Include="Commands\DispatcherFailedEventArgs.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandDispatcher.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="DomainEvents\DomainEventBase.cs" />
     <Compile Include="DomainEvents\EventPipelineBuilder.cs" />
     <Compile Include="DomainEvents\EventPipelineDispatcher.cs" />
+    <Compile Include="DomainEvents\EventsSetupExtensions.cs" />
     <Compile Include="DomainEvents\IDomainEvent.cs" />
     <Compile Include="DomainEvents\IDomainEventDispatcher.cs" />
     <Compile Include="DomainEvents\IDomainEventStorage.cs" />
