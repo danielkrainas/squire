@@ -26,10 +26,21 @@
             set;
         }
 
-        public virtual void Page(int pageIndex, int pageSize)
+        public virtual QueryWithConditions<TModel, TResult> Page(int pageIndex, int pageSize)
         {
             this.PageIndex = pageIndex;
             this.PageSize = pageSize;
+            return this;
+        }
+
+        public virtual void NextPage()
+        {
+            this.PageIndex++;
+        }
+
+        public virtual void PreviousPage()
+        {
+            this.PageIndex = Math.Max(this.PageIndex--, 0);
         }
     }
 }
