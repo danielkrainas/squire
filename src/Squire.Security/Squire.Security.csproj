@@ -114,6 +114,7 @@
     <Compile Include="RegistrationDetails.cs" />
     <Compile Include="SecurityExtensions.cs" />
     <Compile Include="DecoupledSecurityExtensions.cs" />
+    <Compile Include="AppSetupSecurityExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
