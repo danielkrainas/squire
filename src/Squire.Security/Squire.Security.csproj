@@ -75,6 +75,8 @@
     <Compile Include="Authorization\Authorizer.cs" />
     <Compile Include="Authorization\IAuthorizationStrategy.cs" />
     <Compile Include="Authorization\InMemoryRoleTracker.cs" />
+    <Compile Include="Authorization\Queries\GetAllRoles.cs" />
+    <Compile Include="Authorization\Queries\GetRoles.cs" />
     <Compile Include="Authorization\Queries\GetRolesForPlayer.cs" />
     <Compile Include="Authorization\RoleRegistrarCacheFilter.cs" />
     <Compile Include="Authorization\InMemoryRoleRegistrar.cs" />
@@ -104,8 +106,11 @@
     <Compile Include="MockPlayers.cs" />
     <Compile Include="PlayerPrincipal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\GetAllPlayers.cs" />
+    <Compile Include="Queries\GetPlayerByEmail.cs" />
     <Compile Include="Queries\GetPlayerById.cs" />
     <Compile Include="Queries\GetPlayerByName.cs" />
+    <Compile Include="Queries\GetPlayers.cs" />
     <Compile Include="RegistrationDetails.cs" />
     <Compile Include="SecurityExtensions.cs" />
     <Compile Include="DecoupledSecurityExtensions.cs" />
