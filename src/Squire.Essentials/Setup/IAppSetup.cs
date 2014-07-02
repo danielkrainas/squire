@@ -1,16 +1,8 @@
 ﻿namespace Squire.Setup
 {
-    public interface IAppSetup
+    public interface IAppSetup<out T>
     {
-        object Application
-        {
-            get;
-        }
-    }
-
-    public interface IAppSetup<out T> : IAppSetup
-    {
-        new T Application
+        T Application
         {
             get;
         }

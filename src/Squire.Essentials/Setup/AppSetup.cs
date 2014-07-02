@@ -16,13 +16,5 @@
                 return this.application;
             }
         }
-
-        object IAppSetup.Application
-        {
-            get
-            {
-                return (object)this.application;
-            }
-        }
     }
 }
