@@ -124,6 +124,7 @@
     <Compile Include="Pipeline\UpstreamContext.cs" />
     <Compile Include="Practices\IocFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\AppSetupQueryExtensions.cs" />
     <Compile Include="Queries\IDispatchQuery.cs" />
     <Compile Include="Queries\IExecuteQuery.cs" />
     <Compile Include="Queries\IocQueryDispatcher.cs" />
