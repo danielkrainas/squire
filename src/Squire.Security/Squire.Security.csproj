@@ -112,7 +112,7 @@
     <Compile Include="Queries\GetPlayerByName.cs" />
     <Compile Include="Queries\GetPlayers.cs" />
     <Compile Include="RegistrationDetails.cs" />
-    <Compile Include="SecurityExtensions.cs" />
+    <Compile Include="PlayerSecurityExtensions.cs" />
     <Compile Include="DecoupledSecurityExtensions.cs" />
     <Compile Include="AppSetupSecurityExtensions.cs" />
   </ItemGroup>

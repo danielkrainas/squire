@@ -6,7 +6,7 @@
     using System.Security.Principal;
     using System.Text;
 
-    public static class SecurityExtensions
+    public static class PlayerSecurityExtensions
     {
         public static IPlayer AsPlayer(this IIdentity identity)
         {
