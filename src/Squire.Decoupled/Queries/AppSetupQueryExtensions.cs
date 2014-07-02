@@ -6,7 +6,7 @@
 
     public static class AppSetupQueryExtensions
     {
-        public static IAdvancedAppSetup<T, IDispatchQuery> UseIocQueryDispatch<T>(this IAppSetup<T> setup, IServiceLocator locator)
+        public static IAdvancedAppSetup<T, IDispatchQuery> UseContainerQueryDispatch<T>(this IAppSetup<T> setup, IServiceLocator locator)
         {
             return setup.UseQueryDispatch(new IocQueryDispatcher(locator));
         }
