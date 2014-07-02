@@ -22,6 +22,14 @@
             this.autoCreateUnknown = autoCreateUnknown;
         }
 
+        public virtual bool AutoCreateUnknown
+        {
+            get
+            {
+                return this.autoCreateUnknown;
+            }
+        }
+
         public void AddContainer(MemoryBlobContainer container)
         {
             this.containers.Add(container);

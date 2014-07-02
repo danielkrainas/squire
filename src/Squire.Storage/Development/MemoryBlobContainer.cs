@@ -47,9 +47,9 @@
                 .And.IsNotWhiteSpace();
 
             var blob = this.blobs.FirstOrDefault(b => b.Name == name);
-            if (this.autoCreateUnknown && blob == null && this.exists)
+            if (blob == null && this.autoCreateUnknown || blob == null && this.exists)
             {
-                return new MemoryBlob(this, name, false);
+                return this.CreateBlob(name, false);
             }
 
             return blob;
@@ -69,12 +69,32 @@
             this.permissions = permissions;
         }
 
-        public IBlobContainer GetContainer(string containerName)
+        public MemoryBlobContainer CreateContainer(string name, bool preexists)
         {
-            var container = this.containers.FirstOrDefault(c => c.Name == containerName);
+            return new MemoryBlobContainer(this, name, preexists, this.autoCreateUnknown);
+        }
+
+        public MemoryBlobContainer GetOrCreateContainer(string name)
+        {
+            return (MemoryBlobContainer)this.GetContainer(name) ?? this.CreateContainer(name, this.exists);
+        }
+
+        public MemoryBlob CreateBlob(string name, bool preexists)
+        {
+            return new MemoryBlob(this, name, false);
+        }
+
+        public MemoryBlob GetOrCreateBlob(string name)
+        {
+            return (MemoryBlob)this.GetBlob(name) ?? this.CreateBlob(name, this.exists);
+        }
+
+        public IBlobContainer GetContainer(string name)
+        {
+            var container = this.containers.FirstOrDefault(c => c.Name == name);
             if (this.autoCreateUnknown && container == null)
             {
-                container = new MemoryBlobContainer(this, containerName, false, this.autoCreateUnknown);
+                container = this.CreateContainer(name, false);
             }
 
             return container;
