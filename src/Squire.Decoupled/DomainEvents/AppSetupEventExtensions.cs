@@ -1,4 +1,4 @@
-﻿namespace Squire.Decoupled.Commands
+﻿namespace Squire.Decoupled.DomainEvents
 {
     using Squire.Decoupled.Pipeline;
     using Squire.Setup;
@@ -6,19 +6,19 @@
     using System;
     using System.Linq.Expressions;
 
-    public static class CommandsSetupExtensions
+    public static class AppSetupEventExtensions
     {
-        public static IAppSetup<T> Commands<T>(this IAppSetup<T> setup, Expression<Func<PipelineDispatcherBuilder, PipelineDispatcherBuilder>> configure, IUpstreamHandler errorHandler = null)
+        public static IAppSetup<T> Events<T>(this IAppSetup<T> setup, Expression<Func<EventPipelineBuilder, EventPipelineBuilder>> configure, IUpstreamHandler errorHandler = null)
         {
             configure.VerifyParam("configure").IsNotNull();
             errorHandler = errorHandler ?? new DevNullUpstreamHandler();
-            var builder = configure.Compile()(new PipelineDispatcherBuilder(errorHandler));
+            var builder = configure.Compile()(new EventPipelineBuilder(errorHandler));
             if (builder == null)
             {
                 throw new InvalidOperationException("the result of the configuration cannot be null.");
             }
 
-            CommandDispatcher.Assign(builder.Build());
+            DomainEvent.Assign(builder.Build());
             return setup;
         }
     }
