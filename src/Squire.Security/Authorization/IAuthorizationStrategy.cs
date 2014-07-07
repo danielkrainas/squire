@@ -1,9 +1,6 @@
 ﻿namespace Squire.Security.Authorization
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     public interface IAuthorizationStrategy
     {
@@ -11,7 +8,7 @@
 
         IEnumerable<IRole> AllRoles();
 
-        IEnumerable<IPlayer> PlayersIn(IRole role);
+        IEnumerable<string> PlayersIn(IRole role);
 
         IRole Select(string id);
 

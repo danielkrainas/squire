@@ -94,7 +94,7 @@
             return Authorizer._provider.AllRoles();
         }
 
-        public static IEnumerable<IPlayer> PlayersIn(IRole role)
+        public static IEnumerable<string> PlayersIn(IRole role)
         {
             Authorizer.VerifyReady();
             return Authorizer._provider.PlayersIn(role);

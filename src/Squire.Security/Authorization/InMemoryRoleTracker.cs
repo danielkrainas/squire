@@ -8,43 +8,53 @@
 
     public class InMemoryRoleTracker : IRoleTracker
     {
-        private Dictionary<IRole, List<IPlayer>> roleLookup;
+        private readonly Dictionary<IRole, List<IPlayer>> roleLookup;
 
-        private Dictionary<IPlayer, List<IRole>> playerLookup;
+        private readonly Dictionary<IPlayer, List<IRole>> playerLookup;
 
         public InMemoryRoleTracker()
         {
-
+            this.roleLookup = new Dictionary<IRole, List<IPlayer>>();
+            this.playerLookup = new Dictionary<IPlayer, List<IRole>>();
         }
 
-        public IEnumerable<IRole> GetRoles(IPlayer player)
+        /// <summary>
+        /// Gets roles associated with a player, specified by <paramref name="player"/>.
+        /// </summary>
+        /// <param name="player">A player</param>
+        /// <returns>Returns an enumerable of role id&apos;s.</returns>
+        public IEnumerable<string> GetRoles(IPlayer player)
         {
             player.VerifyParam("player").IsNotNull();
             if(this.playerLookup.ContainsKey(player))
             {
-                return this.playerLookup[player];
+                return this.playerLookup[player].Select(r => r.Id);
             }
 
-            return Enumerable.Empty<IRole>();
+            return Enumerable.Empty<string>();
         }
 
-        public IEnumerable<IPlayer> GetPlayers(IRole role)
+        /// <summary>
+        /// Gets players associated with a role, specified by <paramref name="role"/>.
+        /// </summary>
+        /// <param name="role">A role</param>
+        /// <returns>Returns an enumerable of player id&apos;s.</returns>
+        public IEnumerable<string> GetPlayers(IRole role)
         {
             role.VerifyParam("role").IsNotNull();
             if (this.roleLookup.ContainsKey(role))
             {
-                return this.roleLookup[role];
+                return this.roleLookup[role].Select(p => p.Id);
             }
 
-            return Enumerable.Empty<IPlayer>();
+            return Enumerable.Empty<string>();
         }
 
         public bool IsFamiliar(IRole role, IPlayer player)
         {
             role.VerifyParam("role").IsNotNull();
             player.VerifyParam("player").IsNotNull();
-            var roles = this.GetRoles(player);
-            return roles.Contains(role);
+            return this.GetRoles(player).Any(r => r.Equals(role.Id));
         }
 
         public void Remember(IRole role, IPlayer player)

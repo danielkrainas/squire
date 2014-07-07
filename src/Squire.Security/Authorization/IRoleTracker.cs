@@ -1,15 +1,22 @@
 ﻿namespace Squire.Security.Authorization
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     public interface IRoleTracker
     {
-        IEnumerable<IRole> GetRoles(IPlayer player);
+        /// <summary>
+        /// Gets roles associated with a player, specified by <paramref name="player"/>.
+        /// </summary>
+        /// <param name="player">A player</param>
+        /// <returns>Returns an enumerable of role id&apos;s.</returns>
+        IEnumerable<string> GetRoles(IPlayer player);
 
-        IEnumerable<IPlayer> GetPlayers(IRole role);
+        /// <summary>
+        /// Gets players associated with a role, specified by <paramref name="role"/>.
+        /// </summary>
+        /// <param name="role">A role</param>
+        /// <returns>Returns an enumerable of player id&apos;s.</returns>
+        IEnumerable<string> GetPlayers(IRole role);
 
         bool IsFamiliar(IRole role, IPlayer player);
 

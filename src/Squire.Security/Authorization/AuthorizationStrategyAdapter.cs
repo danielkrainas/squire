@@ -45,15 +45,15 @@
             return this.resolver.ResolveAll();
         }
 
-        public virtual IEnumerable<IPlayer> PlayersIn(IRole role)
+        public virtual IEnumerable<string> PlayersIn(IRole role)
         {
             role.VerifyParam("role").IsNotNull();
             if (this.IsRegisteredSafe(role))
             {
-                return this.tracker.GetPlayers(role);
+                return this.tracker.GetPlayers(role).ToArray();
             }
 
-            return Enumerable.Empty<IPlayer>();
+            return Enumerable.Empty<string>();
         }
 
         public virtual IRole Select(string id)
